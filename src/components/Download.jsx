@@ -102,7 +102,7 @@ export default function Download() {
                   transition={{ duration: 0.4, delay: 0.4 }}
                 >
                   <span className="text-green-500">✓</span>
-                  <span>Android - APK Beta (v1.2.0)</span>
+                  <span>Android - APK Beta (v1.3.1)</span>
                 </motion.li>
                 <motion.li 
                   className="flex items-center gap-2"
@@ -149,8 +149,8 @@ export default function Download() {
                 </motion.p>
                 
                 <motion.a 
-                  href="/downloads/looton_beta_1.2.0.apk" 
-                  download="looton_beta_1.2.0.apk"
+                  href="/downloads/Beta 1.3.1.apk" 
+                  download="Beta 1.3.1.apk"
                   className="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors block cursor-hover"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -170,7 +170,7 @@ export default function Download() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.7 }}
                 >
-                  Versão 1.2.0 - APK Beta gratuita com todas as funcionalidades básicas
+                  Versão 1.3.1 - APK Beta gratuita com todas as funcionalidades básicas
                 </motion.p>
               </motion.div>
             </motion.div>

@@ -4,10 +4,11 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 // Imagens de screenshots reais
 const screenshots = [
-  { id: 1, src: "/screenshots/abagames.png", alt: "Tela de aba de games no Looton" },
-  { id: 2, src: "/screenshots/busca.png", alt: "Sistema de busca e filtros no Looton" },
-  { id: 3, src: "/screenshots/detalhes.png", alt: "Tela de detalhes de uma oferta no Looton" },
-  { id: 4, src: "/screenshots/hardware.png", alt: "Seção de hardware no Looton" }
+  { id: 1, src: "/screenshots/games.jpeg", alt: "Tela principal de jogos no Looton" },
+  { id: 2, src: "/screenshots/Busca.jpeg", alt: "Sistema de busca e filtros no Looton" },
+  { id: 3, src: "/screenshots/detalhes.jpeg", alt: "Tela de detalhes de uma oferta no Looton" },
+  { id: 4, src: "/screenshots/hardware.jpeg", alt: "Seção de hardware no Looton" },
+  { id: 5, src: "/screenshots/hardware 1.jpeg", alt: "Visualização detalhada de hardware no Looton" }
 ];
 
 export default function Screenshots() {
@@ -70,23 +71,32 @@ export default function Screenshots() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+          <motion.h3 
+            className="text-lg md:text-xl font-semibold text-accent mb-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Veja como é o <span className="text-accent">Looton</span>
+            Confira as novidades da última versão (1.3.1)
+          </motion.h3>
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Explore o <span className="text-accent">Looton</span> em detalhes
           </motion.h2>
           <motion.p 
             className="text-xl text-accent/80 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Confira telas reais do aplicativo para ter uma ideia do que você encontrará
+            Explore as diversas funcionalidades do aplicativo através de capturas de tela atualizadas
           </motion.p>
         </motion.div>
 
@@ -114,7 +124,7 @@ export default function Screenshots() {
                 }}
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-semibold">Ver detalhes</span>
+                <span className="text-white font-semibold">Ampliar imagem</span>
               </div>
             </motion.div>
           ))}

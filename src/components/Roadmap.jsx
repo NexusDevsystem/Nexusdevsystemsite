@@ -24,14 +24,29 @@ const item = {
 export default function Roadmap() {
   const updates = [
     {
-      version: "v1.2.0 (Última Versão)",
+      version: "v1.3.1 (Última Versão)",
+      date: "24 de outubro de 2025",
+      type: "Lançado",
+      items: [
+        "Novidade: Implementação do sistema de monitoramento com opções de notificação por promoções ou preço específico",
+        "Novidade: Integração da loja Epic Games com seção dedicada a jogos gratuitos da semana e melhores ofertas",
+        "Novidade: Atualização do layout com imagens de jogos ampliadas e funcionalidade de zoom ao clicar",
+        "Novidade: Aprimoramento do botão de redirecionamento para a página do jogo na loja com design mais visível e intuitivo",
+        "Otimização: Melhoria significativa no tempo de carregamento da aba hardware",
+        "Otimização: Aumento na estabilidade geral do aplicativo",
+        "Aprimoramento na experiência do usuário com navegação mais intuitiva"
+      ],
+      status: "completed"
+    },
+    {
+      version: "v1.2.0",
       date: "5 de outubro de 2025",
       type: "Lançado",
       items: [
-        "Remoção da tela de abertura e estados de carregamento para inicialização mais rápida do app",
-        "Funcionalidade de inicialização direta do app implementada",
-        "Adicionados indicadores de preço para melhor acompanhamento de preços",
-        "Atualização das imagens do app e da tela de abertura"
+        "Otimização: Remoção da tela de abertura e estados de carregamento para inicialização mais rápida do aplicativo",
+        "Novidade: Implementação da funcionalidade de inicialização direta do aplicativo",
+        "Novidade: Adição de indicadores de preço para melhor acompanhamento de preços",
+        "Otimização: Atualização das imagens do aplicativo e da tela de abertura"
       ],
       status: "completed"
     },
@@ -40,22 +55,22 @@ export default function Roadmap() {
       date: "5 de outubro de 2025",
       type: "Lançado",
       items: [
-        "Introdução de indicadores de preço para mostrar tendências de preços",
-        "Atualização do ícone do app e da tela de abertura"
+        "Novidade: Introdução de indicadores de preço para visualização de tendências",
+        "Otimização: Atualização do ícone do aplicativo e da tela de abertura"
       ],
       status: "completed"
     },
     {
       version: "v1.0.0",
-      date: "Versão inicial",
+      date: "4 de outubro de 2025",
       type: "Lançado",
       items: [
-        "Configuração completa do monorepo com backend e app móvel",
+        "Implementação da estrutura completa com backend e aplicativo móvel",
         "Funcionalidade de rastreamento de ofertas de jogos",
-        "Capacidade de pesquisa de jogos",
-        "Favoritos do usuário e listas personalizadas",
-        "Sistema de alerta de preço",
-        "Suporte para múltiplas lojas de jogos (Steam, com Epic Games temporariamente desativado para melhorias)"
+        "Capacidade de pesquisa avançada de jogos",
+        "Sistema de favoritos e listas personalizadas para usuários",
+        "Sistema de alerta de preços",
+        "Suporte para múltiplas lojas de jogos (Steam, com Epic Games temporariamente desativado para futuras integrações)"
       ],
       status: "completed"
     }
@@ -151,27 +166,43 @@ export default function Roadmap() {
                 </motion.span>
               </motion.div>
               
-              <motion.ul 
+              <motion.div 
                 className="space-y-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.6 }}
               >
-                {update.items.map((item, idx) => (
-                  <motion.li 
-                    key={idx} 
-                    className="flex items-start gap-3 text-white"
-                    initial={{ opacity: 0, x: 10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.7 + idx * 0.1 }}
-                  >
-                    <span className="text-accent mt-1">•</span>
-                    <span>{item}</span>
-                  </motion.li>
-                ))}
-              </motion.ul>
+                {update.items.map((item, idx) => {
+                  const isNovidade = item.startsWith('Novidade:');
+                  const isOtimizacao = item.startsWith('Otimização:');
+                  return (
+                    <motion.div 
+                      key={idx} 
+                      className={`flex items-start gap-3 p-3 rounded-lg ${
+                        isNovidade ? 'bg-blue-500/10 border border-blue-500/30' : 
+                        isOtimizacao ? 'bg-green-500/10 border border-green-500/30' : 
+                        'bg-secondary/10'
+                      }`}
+                      initial={{ opacity: 0, x: 10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.7 + idx * 0.1 }}
+                    >
+                      <span className={`mt-1 font-semibold ${
+                        isNovidade ? 'text-blue-400' : 
+                        isOtimizacao ? 'text-green-400' : 
+                        'text-accent'
+                      }`}>
+                        {isNovidade ? '✨ Novidade:' : isOtimizacao ? '⚙️ Otimização:' : '•'}
+                      </span>
+                      <span className="text-white">
+                        {isNovidade || isOtimizacao ? item.split(': ')[1] : item}
+                      </span>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>
