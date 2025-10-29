@@ -1,33 +1,36 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Navbar({ home = false }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(null)
+  const location = useLocation()
 
   const mainLinks = [
-    { to: 'home', label: 'Início' },
+    { to: 'home', label: 'Início', type: 'scroll' },
     { 
       label: 'Produto', 
       submenu: [
-        { to: 'about', label: 'Sobre' },
-        { to: 'features', label: 'Recursos' },
-        { to: 'screenshots', label: 'Telas' },
-        { to: 'how-it-works', label: 'Como Funciona' }
+        { to: 'about', label: 'Sobre', type: 'scroll' },
+        { to: 'features', label: 'Recursos', type: 'scroll' },
+        { to: 'screenshots', label: 'Telas', type: 'scroll' },
+        { to: 'how-it-works', label: 'Como Funciona', type: 'scroll' }
       ]
     },
     { 
       label: 'Mais', 
       submenu: [
-        { to: 'for-whom', label: 'Para Quem' },
-        { to: 'differences', label: 'Diferenciais' },
-        { to: 'privacy', label: 'Privacidade' },
-        { to: 'roadmap', label: 'Atualizações' }
+        { to: 'for-whom', label: 'Para Quem', type: 'scroll' },
+        { to: 'differences', label: 'Diferenciais', type: 'scroll' },
+        { to: 'privacy', label: 'Compromisso', type: 'scroll' },
+        { to: '/privacy-policy', label: 'Política de Privacidade', type: 'external' },
+        { to: 'roadmap', label: 'Atualizações', type: 'scroll' }
       ]
     },
-    { to: 'download', label: 'Download' }
+    { to: 'download', label: 'Download', type: 'scroll' }
   ]
 
   useEffect(() => {
@@ -35,6 +38,11 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const handleLinkClick = () => {
+    setOpen(false)
+    setDropdownOpen(null)
+  }
 
   return (
     <nav
@@ -47,13 +55,23 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         {/* logo */}
-        <Link to="home" smooth duration={500} className="cursor-pointer">
-          <img
-            src="/nexuslogo.png"
-            alt="Looton - Radar de Ofertas Gamer"
-            className="h-14 md:h-16 lg:h-20"
-          />
-        </Link>
+        {home ? (
+          <ScrollLink to="home" smooth duration={500} className="cursor-pointer">
+            <img
+              src="/nexuslogo.png"
+              alt="Looton - Radar de Ofertas Gamer"
+              className="h-14 md:h-16 lg:h-20"
+            />
+          </ScrollLink>
+        ) : (
+          <RouterLink to="/" className="cursor-pointer">
+            <img
+              src="/nexuslogo.png"
+              alt="Looton - Radar de Ofertas Gamer"
+              className="h-14 md:h-16 lg:h-20"
+            />
+          </RouterLink>
+        )}
 
         {/* desktop links */}
         <ul className="hidden md:flex space-x-6">
@@ -85,35 +103,55 @@ export default function Navbar() {
                     >
                       {link.submenu.map((sublink, subindex) => (
                         <li key={subindex} className="py-1">
-                          <Link
-                            to={sublink.to}
-                            spy
-                            smooth
-                            offset={-80}
-                            duration={500}
-                            className="block px-4 py-1 text-white hover:text-accent transition"
-                            activeClass="text-accent"
-                            onClick={() => setDropdownOpen(null)}
-                          >
-                            {sublink.label}
-                          </Link>
+                          {sublink.type === 'external' ? (
+                            <RouterLink
+                              to={sublink.to}
+                              className="block px-4 py-1 text-white hover:text-accent transition"
+                              onClick={handleLinkClick}
+                            >
+                              {sublink.label}
+                            </RouterLink>
+                          ) : (
+                            <ScrollLink
+                              to={sublink.to}
+                              spy
+                              smooth
+                              offset={-80}
+                              duration={500}
+                              className="block px-4 py-1 text-white hover:text-accent transition"
+                              activeClass="text-accent"
+                              onClick={handleLinkClick}
+                            >
+                              {sublink.label}
+                            </ScrollLink>
+                          )}
                         </li>
                       ))}
                     </ul>
                   )}
                 </>
               ) : (
-                <Link
-                  to={link.to}
-                  spy
-                  smooth
-                  offset={-80}
-                  duration={500}
-                  className="cursor-pointer px-2 py-1 text-white hover:text-secondary transition flex items-center cursor-hover"
-                  activeClass="text-secondary border-b-2 border-secondary"
-                >
-                  <span className="flex items-center h-full">{link.label}</span>
-                </Link>
+                link.type === 'external' ? (
+                  <RouterLink
+                    to={link.to}
+                    className="cursor-pointer px-2 py-1 text-white hover:text-secondary transition flex items-center cursor-hover"
+                    onClick={handleLinkClick}
+                  >
+                    <span className="flex items-center h-full">{link.label}</span>
+                  </RouterLink>
+                ) : (
+                  <ScrollLink
+                    to={link.to}
+                    spy
+                    smooth
+                    offset={-80}
+                    duration={500}
+                    className="cursor-pointer px-2 py-1 text-white hover:text-secondary transition flex items-center cursor-hover"
+                    activeClass="text-secondary border-b-2 border-secondary"
+                  >
+                    <span className="flex items-center h-full">{link.label}</span>
+                  </ScrollLink>
+                )
               )}
             </li>
           ))}
@@ -159,36 +197,56 @@ export default function Navbar() {
                 </li>,
                 ...link.submenu.map((sublink, subindex) => (
                   <li key={`sub-${index}-${subindex}`} className="pl-4">
-                    <Link
-                      to={sublink.to}
-                      spy
-                      smooth
-                      offset={-80}
-                      duration={500}
-                      className="block py-2 text-white hover:text-secondary transition"
-                      activeClass="text-secondary font-semibold"
-                      onClick={() => setOpen(false)}
-                    >
-                      {sublink.label}
-                    </Link>
+                    {sublink.type === 'external' ? (
+                      <RouterLink
+                        to={sublink.to}
+                        className="block py-2 text-white hover:text-secondary transition"
+                        onClick={handleLinkClick}
+                      >
+                        {sublink.label}
+                      </RouterLink>
+                    ) : (
+                      <ScrollLink
+                        to={sublink.to}
+                        spy
+                        smooth
+                        offset={-80}
+                        duration={500}
+                        className="block py-2 text-white hover:text-secondary transition"
+                        activeClass="text-secondary font-semibold"
+                        onClick={handleLinkClick}
+                      >
+                        {sublink.label}
+                      </ScrollLink>
+                    )}
                   </li>
                 ))
               ]
             } else {
               return (
                 <li key={index}>
-                  <Link
-                    to={link.to}
-                    spy
-                    smooth
-                    offset={-80}
-                    duration={500}
-                    className="block py-2 text-white hover:text-secondary transition"
-                    activeClass="text-secondary font-semibold"
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
+                  {link.type === 'external' ? (
+                    <RouterLink
+                      to={link.to}
+                      className="block py-2 text-white hover:text-secondary transition"
+                      onClick={handleLinkClick}
+                    >
+                      {link.label}
+                    </RouterLink>
+                  ) : (
+                    <ScrollLink
+                      to={link.to}
+                      spy
+                      smooth
+                      offset={-80}
+                      duration={500}
+                      className="block py-2 text-white hover:text-secondary transition"
+                      activeClass="text-secondary font-semibold"
+                      onClick={handleLinkClick}
+                    >
+                      {link.label}
+                    </ScrollLink>
+                  )}
                 </li>
               )
             }
