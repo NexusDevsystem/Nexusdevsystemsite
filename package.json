@@ -19,6 +19,7 @@
     "nodemailer": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.5",
     "react-scroll": "^1.9.3",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^3.8.1"
