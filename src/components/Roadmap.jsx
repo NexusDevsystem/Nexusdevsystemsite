@@ -24,7 +24,25 @@ const item = {
 export default function Roadmap() {
   const updates = [
     {
-      version: "v1.3.1 (Última Versão)",
+      version: "v1.7 (Última Versão)",
+      date: "5 de novembro de 2025",
+      type: "Lançado",
+      items: [
+        "Novidade: Sistema de notificações completamente renovado",
+        "Novidade: Histórico de notificações no sino (aba Games)",
+        "Novidade: Ofertas do Dia enviadas 2x ao dia (12h e 18h)",
+        "Novidade: Alertas automáticos quando jogos vigiados entrarem em promoção",
+        "Novidade: Nova opção de visualização: alterne entre Lista e Grade",
+        "Novidade: Novas configurações disponíveis na aba Configurações",
+        "Otimização: Corrigido problema de notificações duplicadas",
+        "Otimização: Sistema de notificações mais confiável e preciso",
+        "Otimização: Melhor performance no carregamento de ofertas",
+        "Otimização: Interface mais flexível e personalizável"
+      ],
+      status: "completed"
+    },
+    {
+      version: "v1.3.1",
       date: "24 de outubro de 2025",
       type: "Lançado",
       items: [

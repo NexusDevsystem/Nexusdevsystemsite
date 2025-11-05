@@ -106,7 +106,7 @@ export default function Hero() {
                        px-8 py-4 rounded-full font-semibold text-primary shadow-lg
                        transition-transform hover:scale-105 cursor-hover"
           >
-            Baixar Agora
+            Obter Acesso
             <ArrowRight className="w-5 h-5 ml-2" />
           </a>
           <a

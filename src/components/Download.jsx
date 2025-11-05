@@ -44,7 +44,7 @@ export default function Download() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Baixe o <span className="text-accent">Looton</span> agora
+            Acesse o <span className="text-accent">Looton</span> na Play Store
           </motion.h2>
           <motion.p 
             className="text-xl text-accent/80 max-w-3xl mx-auto mb-12"
@@ -54,7 +54,7 @@ export default function Download() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Baixe a versão beta do Looton e comece a economizar tempo e dinheiro nas suas compras de jogos da Steam
+            O app está atualmente em acesso antecipado na Google Play Store. Para obter acesso, envie seu email cadastrado na Google Play para nosso Instagram ou via email.
           </motion.p>
 
           <motion.div 
@@ -91,28 +91,40 @@ export default function Download() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                Disponível para
+                Acesso Antecipado
               </motion.h3>
+              <div className="flex justify-center mb-4">
+                <motion.img 
+                  src="/screenshots/icon.png" 
+                  alt="Ícone do Looton" 
+                  className="w-16 h-16 rounded-lg"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                />
+              </div>
               <ul className="space-y-3 mb-6 text-accent/90">
                 <motion.li 
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 justify-center"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                 >
-                  <span className="text-green-500">✓</span>
-                  <span>Android - APK Beta (v1.3.1)</span>
+                  <span className="text-green-500 text-2xl">✓</span>
+                  <span className="text-xl">Google Play Store</span>
                 </motion.li>
                 <motion.li 
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 justify-center"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                 >
-                  <span className="text-yellow-500">⚠</span>
-                  <span>iOS (Sem data prevista)</span>
+                  <span className="text-yellow-500 text-2xl">⚠</span>
+                  <span className="text-xl">Acesso Antecipado</span>
                 </motion.li>
               </ul>
             </motion.div>
@@ -136,7 +148,7 @@ export default function Download() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  Pronto para começar?
+                  Obtenha acesso antecipado
                 </motion.h3>
                 <motion.p 
                   className="text-accent/90 mb-6"
@@ -145,32 +157,47 @@ export default function Download() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                  Junte-se a milhares de gamers que já economizam tempo e dinheiro com o Looton.
+                  Envie seu email cadastrado na Google Play para nosso Instagram ou via email para obter acesso ao Looton.
                 </motion.p>
                 
-                <motion.a 
-                  href="/downloads/Beta 1.3.1.apk" 
-                  download="Beta 1.3.1.apk"
-                  className="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors block cursor-hover"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <DownloadIcon className="w-5 h-5" />
-                  Baixar APK Beta
-                </motion.a>
+                <motion.div className="space-y-4">
+                  <motion.a 
+                    href="https://www.instagram.com/nexus.devsystem" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-6 rounded-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity block cursor-hover"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>@nexus.devsystem</span>
+                  </motion.a>
+                  
+                  <motion.a 
+                    href="mailto:nexusdevsystem@gmail.com" 
+                    className="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-accent/90 transition-colors block cursor-hover"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span>nexusdevsystem@gmail.com</span>
+                  </motion.a>
+                </motion.div>
                 
                 <motion.p 
-                  className="text-sm text-accent/70 mt-4"
+                  className="text-sm text-accent/70 mt-4 text-center"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
                 >
-                  Versão 1.3.1 - APK Beta gratuita com todas as funcionalidades básicas
+                  Após receber acesso, você poderá baixar o app na Google Play Store
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -181,7 +208,7 @@ export default function Download() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
             whileHover={{ y: -5, transition: { duration: 0.3 } }}
           >
             <motion.h3 
@@ -189,18 +216,18 @@ export default function Download() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.9 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
             >
-              Frase do Looton
+              Como obter acesso?
             </motion.h3>
             <motion.p 
               className="text-xl text-accent/90 italic text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 1.0 }}
+              transition={{ duration: 0.5, delay: 1.1 }}
             >
-              "Pare de caçar descontos. O Looton encontra por você."
+              Envie seu email da Google Play para nosso Instagram ou email e você receberá acesso antecipado ao Looton.
             </motion.p>
           </motion.div>
         </motion.div>
