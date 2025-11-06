@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import CustomCursor from '../components/CustomCursor';
 
 // Variantes de animação para o PrivacyPolicy
 const container = {
@@ -25,7 +24,6 @@ const item = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-primary text-white">
-      <CustomCursor />
       <div className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 

@@ -23,6 +23,7 @@ export default function Navbar({ home = false }) {
     { 
       label: 'Mais', 
       submenu: [
+        { to: '/news', label: 'Notícias', type: 'external' },
         { to: 'for-whom', label: 'Para Quem', type: 'scroll' },
         { to: 'differences', label: 'Diferenciais', type: 'scroll' },
         { to: 'privacy', label: 'Compromisso', type: 'scroll' },

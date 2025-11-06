@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import ScrollProgress from './components/ScrollProgress'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import News from './components/News'
 import About from './components/About'
 import Features from './components/Features'
 import HowItWorks from './components/HowItWorks'
@@ -13,8 +14,9 @@ import Screenshots from './components/Screenshots'
 import Roadmap from './components/Roadmap'
 import Download from './components/Download'
 import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import NewsPage from './pages/NewsPage'
+import NewsDetailPage from './pages/NewsDetailPage'
 
 export default function App() {
   return (
@@ -25,9 +27,9 @@ export default function App() {
           element={
             <>
               <ScrollProgress />
-              <CustomCursor />
               <Navbar home={true} />
               <Hero />
+              <News />
               <About />
               <Features />
               <HowItWorks />
@@ -41,6 +43,8 @@ export default function App() {
           } 
         />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/access-info" element={<NewsDetailPage />} />
       </Routes>
     </div>
   )
