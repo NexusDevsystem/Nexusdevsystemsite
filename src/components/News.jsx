@@ -28,6 +28,12 @@ export default function News() {
       date: "5 de novembro de 2025",
       excerpt: "Saiba como obter acesso antecipado ao Looton na Google Play Store.",
       category: "Acesso"
+    },
+    {
+      title: "Nova Identidade Visual do Looton",
+      date: "16 de outubro de 2025",
+      excerpt: "Descubra o novo ícone do Looton com design gamer e referência à NexusDevSystem.",
+      category: "Atualização"
     }
   ];
 
@@ -65,7 +71,7 @@ export default function News() {
         </motion.div>
 
         <motion.div 
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto space-y-6"
           variants={container}
         >
           {news.map((item, index) => (
@@ -91,8 +97,8 @@ export default function News() {
                 <div className="flex flex-col md:flex-row items-start mb-6">
                   <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
                     <img 
-                      src="/[CITYPNG.COM]HD Google Play PlayStore Logo Symbol PNG - 3000x3000.png" 
-                      alt="Google Play Store" 
+                      src={index === 0 ? "/[CITYPNG.COM]HD Google Play PlayStore Logo Symbol PNG - 3000x3000.png" : "/screenshots/icon.png"} 
+                      alt={item.title} 
                       className="w-16 h-16 object-contain"
                     />
                   </div>
@@ -104,7 +110,7 @@ export default function News() {
                 
                 <div className="flex items-center justify-between pt-6 border-t border-accent/20">
                   <div></div>
-                  <a href="/news/access-info" className="flex items-center text-accent hover:text-accent/80 font-medium">
+                  <a href={index === 0 ? "/news/access-info" : "/news/new-identity"} className="flex items-center text-accent hover:text-accent/80 font-medium">
                     <span>Saiba mais</span>
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>

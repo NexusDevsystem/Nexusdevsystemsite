@@ -17,6 +17,7 @@ import Footer from './components/Footer'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import NewsPage from './pages/NewsPage'
 import NewsDetailPage from './pages/NewsDetailPage'
+import NewIdentityPage from './pages/NewIdentityPage'
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/news/access-info" element={<NewsDetailPage />} />
+        <Route path="/news/new-identity" element={<NewIdentityPage />} />
       </Routes>
     </div>
   )

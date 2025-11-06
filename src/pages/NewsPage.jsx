@@ -31,6 +31,15 @@ export default function NewsPage() {
       image: "/screenshots/icon.png",
       category: "Acesso",
       content: "O Looton está atualmente em acesso antecipado na Google Play Store. O procedimento é simples: envie-nos uma mensagem informando o e-mail cadastrado na Google Play pelo Instagram (@nexus.devsystem) ou pelo e-mail nexusdevsystem@gmail.com. Cadastraremos seu endereço e, assim, você terá acesso ao Looton, poderá utilizar todas as funcionalidades e contribuirá para aprimorarmos o aplicativo e avançarmos na liberação para o público geral."
+    },
+    {
+      id: 2,
+      title: "Nova Identidade Visual do Looton",
+      date: "16 de outubro de 2025",
+      excerpt: "Descubra o novo ícone do Looton com design gamer e referência à NexusDevSystem.",
+      image: "/screenshots/icon.png",
+      category: "Atualização",
+      content: "Estamos empolgados em anunciar a nova identidade visual do Looton! O novo ícone foi cuidadosamente projetado para representar nossa identidade e valores. O design estilizado em forma de 'L' simboliza o Looton com um estilo mais gamer, enquanto as linhas que formam um 'X' fazem referência à empresa NexusDevSystem, criadora do aplicativo. Esta atualização visual reflete nosso compromisso com a inovação e a experiência do usuário."
     }
   ];
 
@@ -65,7 +74,7 @@ export default function NewsPage() {
           {news.map((item) => (
             <a 
               key={item.id} 
-              href="/news/access-info"
+              href={item.id === 1 ? "/news/access-info" : "/news/new-identity"}
               className="block"
             >
               <motion.div 
@@ -91,8 +100,8 @@ export default function NewsPage() {
                   <div className="flex flex-col md:flex-row items-start mb-8">
                     <div className="flex-shrink-0 mb-6 md:mb-0 md:mr-8">
                       <img 
-                        src="/[CITYPNG.COM]HD Google Play PlayStore Logo Symbol PNG - 3000x3000.png" 
-                        alt="Google Play Store" 
+                        src={item.id === 1 ? "/[CITYPNG.COM]HD Google Play PlayStore Logo Symbol PNG - 3000x3000.png" : "/screenshots/icon.png"} 
+                        alt={item.title} 
                         className="w-20 h-20 object-contain"
                       />
                     </div>
