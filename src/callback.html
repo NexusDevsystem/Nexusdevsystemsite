@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Authorization Complete</h1>
+        <p>Processing your authorization...</p>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        // Pega os parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+        const error = urlParams.get('error');
+        
+        const statusDiv = document.getElementById('status');
+        
+        // Limpa os parâmetros da URL para segurança
+        window.history.replaceState({}, document.title, window.location.pathname);
+        
+        if (error) {
+            statusDiv.innerHTML = `<p style="color: red;">Error: ${error}</p>`;
+            console.error('OAuth error:', error);
+            return;
+        }
+        
+        if (code) {
+            statusDiv.innerHTML = '<p style="color: green;">Authorization code received! Processing...</p>';
+            
+            // Verificação de segurança do state (opcional, dependendo da sua implementação)
+            // const storedState = localStorage.getItem('oauth_state');
+            // if (state && storedState && state !== storedState) {
+            //     statusDiv.innerHTML = '<p style="color: red;">Invalid state parameter.</p>';
+            //     console.error('Invalid state parameter');
+            //     return;
+            // }
+            
+            // Envia o código para seu backend
+            fetch('/api/oauth/callback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    code: code, 
+                    state: state,
+                    redirect_uri: window.location.href
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                statusDiv.innerHTML = '<p style="color: green;">Authorization successful! You can close this window.</p>';
+                
+                // Opcional: redirecionar após um tempo
+                // setTimeout(() => {
+                //     window.close(); // Fecha a janela se foi aberta como popup
+                // }, 2000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                statusDiv.innerHTML = '<p style="color: red;">Error processing authorization.</p>';
+            });
+            
+            console.log('Authorization code:', code);
+            console.log('State parameter:', state);
+        } else {
+            statusDiv.innerHTML = '<p style="color: red;">No authorization code received.</p>';
+            console.log('No authorization code in URL');
+        }
+    </script>
+</body>
+</html>
