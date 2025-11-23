@@ -1,0 +1,227 @@
+/* App specific styles */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  /* Espaço para a navbar fixa */
+}
+
+footer {
+  background-color: #fff;
+  backdrop-filter: blur(10px);
+  margin-top: auto;
+  border-top: 1px solid #eee;
+}
+
+/* Estilos do rodapé com links */
+.simple-footer {
+  background-color: #fff;
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 0;
+  margin-top: auto;
+  border-top: 1px solid #eee;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-info {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-info {
+    text-align: left;
+  }
+}
+
+.footer-info p {
+  margin: 0.25rem 0;
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+.footer-links a {
+  color: #5f6368;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.download-android-btn {
+  background-color: #000;
+  color: white;
+  border: 1px solid #000;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+  font-family: inherit;
+}
+
+.download-android-btn:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.learn-more-btn {
+  background-color: transparent;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: auto;
+  font-family: inherit;
+}
+
+.learn-more-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: #5f6368;
+}
+
+.learn-more-btn-link {
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.download-btn-link {
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsividade para botões na página inicial */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .container>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem !important;
+    width: 100%;
+  }
+
+  .download-android-btn,
+  .learn-more-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .download-btn-link,
+  .learn-more-btn-link {
+    flex: 0 0 auto;
+    display: inline-block;
+  }
+
+  main {
+    padding-top: 70px;
+  }
+
+  footer {
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.75rem !important;
+  }
+
+  .download-android-btn,
+  .learn-more-btn {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .download-btn-link,
+  .learn-more-btn-link {
+    width: 100%;
+  }
+}

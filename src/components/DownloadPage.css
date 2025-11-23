@@ -1,0 +1,164 @@
+.download-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.app-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.download-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #202124;
+}
+
+.store-logo {
+  max-width: 150px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.download-options {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.download-option {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 250px;
+  text-align: center;
+}
+
+.download-option h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #202124;
+}
+
+.platform-name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #202124;
+  font-weight: normal;
+  display: block;
+}
+
+.download-option p {
+  color: #5f6368;
+  margin-bottom: 1.5rem;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
+
+.download-btn.soon {
+  background-color: #ccc;
+  color: #666;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  cursor: not-allowed;
+}
+
+.back-link {
+  margin-top: 2rem;
+}
+
+.back-link a {
+  color: #5f6368;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .download-page {
+    padding-top: 70px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .download-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .download-option {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .download-page h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .app-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .store-logo {
+    max-width: 120px;
+  }
+
+  .platform-name {
+    font-size: 1.25rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .download-btn.soon {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .download-page h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .download-option {
+    padding: 1.25rem;
+  }
+
+  .platform-name {
+    font-size: 1.1rem;
+  }
+}

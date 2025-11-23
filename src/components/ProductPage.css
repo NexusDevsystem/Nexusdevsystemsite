@@ -1,0 +1,672 @@
+.product-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  /* Espaço para a navbar fixa */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.product-content {
+  max-width: 1200px;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-bottom: calc(100vh - 800px);
+  /* Mostra bastante da próxima seção */
+  padding-left: 40px;
+}
+
+.product-page h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem 0;
+  color: #202124;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+
+
+.download-btn-link {
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.details-section {
+  min-height: 100vh;
+  /* Ocupa uma tela inteira */
+  padding: 6rem 0 4rem;
+  margin-top: 0;
+  /* Começa logo após a primeira seção */
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+  /* Centraliza verticalmente o conteúdo */
+}
+
+.details-content {
+  max-width: 1200px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+
+.details-section h2 {
+  font-size: 1.8rem;
+  color: #202124;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 2rem 0;
+}
+
+.app-content {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-description {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.app-description p {
+  font-size: 1rem;
+  color: #5f6368;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.app-description p:last-child {
+  margin-bottom: 0;
+}
+
+.app-logo {
+  flex-shrink: 0;
+  flex-basis: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Nova seção de explore */
+.explore-section {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.explore-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.explore-section h2 {
+  font-size: 1.8rem;
+  color: #202124;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 2rem 0;
+}
+
+.explore-content .screenshots-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.explore-content .screenshots-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.explore-content .screenshots-text h3 {
+  font-size: 1.5rem;
+  color: #202124;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.explore-content .screenshots-text p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.explore-content .screenshots-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5f6368;
+  line-height: 1.7;
+}
+
+.explore-content .screenshots-text li {
+  margin-bottom: 0.5rem;
+}
+
+.explore-content .screenshots-image {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore-content .screenshots-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção de hardware */
+.hardware-section {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hardware-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+
+.hardware-content .screenshots-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.hardware-content .screenshots-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hardware-content .screenshots-text h3 {
+  font-size: 1.5rem;
+  color: #202124;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.hardware-content .screenshots-text p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.hardware-content .screenshots-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5f6368;
+  line-height: 1.7;
+}
+
+.hardware-content .screenshots-text li {
+  margin-bottom: 0.5rem;
+}
+
+.hardware-content .screenshots-image {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hardware-content .screenshots-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção de busca */
+.search-section {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.search-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.search-content .screenshots-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.search-content .screenshots-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.search-content .screenshots-text h3 {
+  font-size: 1.5rem;
+  color: #202124;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.search-content .screenshots-text p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.search-content .screenshots-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5f6368;
+  line-height: 1.7;
+}
+
+.search-content .screenshots-text li {
+  margin-bottom: 0.5rem;
+}
+
+.search-content .screenshots-image {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-content .screenshots-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção de detalhes */
+.details-view-section {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.details-view-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.details-view-content .screenshots-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.details-view-content .screenshots-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.details-view-content .screenshots-text h3 {
+  font-size: 1.5rem;
+  color: #202124;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.details-view-content .screenshots-text p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.details-view-content .screenshots-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5f6368;
+  line-height: 1.7;
+}
+
+.details-view-content .screenshots-text li {
+  margin-bottom: 0.5rem;
+}
+
+.details-view-content .screenshots-image {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-view-content .screenshots-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Seção de vigiando */
+.watching-section {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.watching-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.watching-content .screenshots-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.watching-content .screenshots-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.watching-content .screenshots-text h3 {
+  font-size: 1.5rem;
+  color: #202124;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.watching-content .screenshots-text p {
+  font-size: 1.1rem;
+  color: #5f6368;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.watching-content .screenshots-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #5f6368;
+  line-height: 1.7;
+}
+
+.watching-content .screenshots-text li {
+  margin-bottom: 0.5rem;
+}
+
+.watching-content .screenshots-image {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watching-content .screenshots-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 95vh;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Layout reverso para intercalar as seções */
+.screenshots-container.reverse-layout {
+  flex-direction: row-reverse;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-page {
+    padding-top: 70px;
+  }
+
+  .product-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: calc(100vh - 600px);
+  }
+
+  .product-page h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .download-btn-link {
+    flex: 0 0 auto;
+    display: inline-block;
+  }
+
+  .download-android-btn,
+  .learn-more-btn {
+    padding: 1rem 1.5rem;
+    white-space: nowrap;
+  }
+
+  .details-section,
+  .explore-section,
+  .hardware-section,
+  .search-section,
+  .details-view-section,
+  .watching-section {
+    min-height: auto;
+    padding: 3rem 0 2rem;
+  }
+
+  .details-content,
+  .explore-content,
+  .hardware-content,
+  .search-content,
+  .details-view-content,
+  .watching-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .details-section h2,
+  .explore-section h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .app-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .app-description {
+    order: 2;
+  }
+
+  .app-logo {
+    order: 1;
+    margin: 0 auto;
+    text-align: center;
+    flex-basis: auto;
+    width: 150px;
+    height: 150px;
+  }
+
+  .app-logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .app-description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .screenshots-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .screenshots-container.reverse-layout {
+    flex-direction: column;
+  }
+
+  .screenshots-text {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  .screenshots-text h3 {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .screenshots-text p {
+    font-size: 0.95rem !important;
+    line-height: 1.6;
+  }
+
+  .screenshots-text ul {
+    font-size: 0.95rem;
+    padding-left: 1.25rem;
+  }
+
+  .screenshots-text li {
+    margin-bottom: 0.5rem;
+  }
+
+  .screenshots-image {
+    width: 100%;
+    order: 1;
+  }
+
+  .screenshots-text {
+    order: 2;
+  }
+
+  .screenshots-image img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-page h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .details-section h2,
+  .explore-section h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .screenshots-text h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .screenshots-text p,
+  .screenshots-text ul {
+    font-size: 0.9rem !important;
+  }
+
+  .app-logo img {
+    max-width: 120px;
+  }
+
+  .product-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .download-btn-link,
+  .learn-more-btn-link {
+    width: 100%;
+  }
+
+  .download-android-btn,
+  .learn-more-btn {
+    width: 100%;
+  }
+
+  .details-content,
+  .explore-content,
+  .hardware-content,
+  .search-content,
+  .details-view-content,
+  .watching-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
